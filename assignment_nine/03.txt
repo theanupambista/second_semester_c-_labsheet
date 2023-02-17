@@ -1,0 +1,84 @@
+In C++, there are several operations that can be performed on files. These operations are defined in the fstream header file, and they include:
+
+1)Opening a file: This operation involves creating a stream object and associating it with a file. The open() function is used to open a file in one of three modes: input (ios::in), output (ios::out), or append (ios::app). For example:
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ofstream myfile;
+    myfile.open("example.txt");
+    if (myfile.is_open()) {
+        myfile << "This is a line." << endl;
+        myfile.close();
+    }
+    else {
+        cout << "Unable to open file." << endl;
+    }
+    return 0;
+}
+In this example, the ofstream object myfile is created and opened in output mode using the open() function. The text "This is a line." is written to the file, and the close() function is called to close the file.
+
+2)Reading from a file: This operation involves reading data from a file. The getline() function is used to read a line of text from a file. For example:
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream myfile;
+    string line;
+    myfile.open("example.txt");
+    if (myfile.is_open()) {
+        while (getline(myfile, line)) {
+            cout << line << endl;
+        }
+        myfile.close();
+    }
+    else {
+        cout << "Unable to open file." << endl;
+    }
+    return 0;
+}
+In this example, the ifstream object myfile is created and opened in input mode using the open() function. The getline() function is used to read each line of text from the file, and the text is printed to the console.
+
+3)Writing to a file: This operation involves writing data to a file. The << operator is used to write data to a file. For example:
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ofstream myfile;
+    myfile.open("example.txt");
+    if (myfile.is_open()) {
+        myfile << "This is a line." << endl;
+        myfile.close();
+    }
+    else {
+        cout << "Unable to open file." << endl;
+    }
+    return 0;
+}
+In this example, the ofstream object myfile is created and opened in output mode using the open() function. The << operator is used to write the text "This is a line." to the file, and the close() function is called to close the file.
+
+4)Closing a file: This operation involves closing a file that was previously opened with the open() function. The close() function is used to close the file. For example:
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ofstream myfile;
+    myfile.open("example.txt");
+    if (myfile.is_open()) {
+        myfile << "This is a line." << endl;
+        myfile.close();
+    }
+    else {
+        cout << "Unable to open file." << endl;
+    }
+    return 0;
+}
+In this example, the close() function is called to close the file after the text has been written to it.

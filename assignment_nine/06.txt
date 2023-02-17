@@ -1,0 +1,25 @@
+Random access to files refers to the ability to read or write data at any position in a file, rather than just at the beginning or end. This can be useful in a variety of situations, such as when working with large amounts of data or when performing complex data processing tasks.
+
+In C++, random access to files is supported through a set of file stream manipulation functions. These functions allow you to seek to a specific position in the file and read or write data from that position.
+
+The main functions for random access to files in C++ are:
+
+seekg(): This function sets the read position of the input file stream. It takes an argument that specifies the position in the file to seek to.
+
+tellg(): This function returns the current read position of the input file stream.
+
+seekp(): This function sets the write position of the output file stream. It takes an argument that specifies the position in the file to seek to.
+
+tellp(): This function returns the current write position of the output file stream.
+
+read(): This function reads a specified number of bytes from the input file stream and stores them in a buffer.
+
+write(): This function writes a specified number of bytes from a buffer to the output file stream.
+
+seekdir(): This function sets the position in the directory of the file stream.
+
+telldir(): This function returns the current position in the directory of the file stream.
+
+These functions allow you to read or write data at any position in a file, rather than just at the beginning or end. This can be useful for tasks such as searching or sorting data in a file, or for working with large data sets that cannot be loaded entirely into memory.
+
+To use these functions, you must first open a file stream with the appropriate mode (e.g. binary, text), and then use the seekg(), tellg(), read() and write() functions to read or write data at any position in the file.
