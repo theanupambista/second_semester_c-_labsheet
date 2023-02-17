@@ -1,0 +1,17 @@
+Type conversion, also known as typecasting, is the process of converting one data type to another. In Object-Oriented Programming (OOP), type conversion is necessary because different classes and objects may have different data types, and it may be necessary to convert between these types in order to perform certain operations.
+
+For example, suppose we have two classes Rectangle and Square, and we want to add a Rectangle object and a Square object together. To do this, we would need to convert the Square object to a Rectangle object, since they have different data types. This is where type conversion comes in.
+
+In C++, there are two types of type conversion: implicit conversion and explicit conversion.
+
+1)Implicit Conversion:
+Implicit conversion, also known as automatic conversion, occurs when the compiler automatically converts one data type to another without the need for an explicit type conversion operator. This is typically done when the destination data type is wider or more precise than the source data type, to avoid loss of data.
+
+2)Explicit Conversion:
+Explicit conversion, also known as typecasting, occurs when the programmer manually converts one data type to another using a type conversion operator. There are two types of explicit conversion: C-style casting and C++ style casting.
+
+a) C-style casting:
+C-style casting is the most common form of explicit conversion and is done by enclosing the destination data type in parentheses and placing it before the source data type
+
+b) C++ style casting:
+C++ style casting is a more type-safe and flexible form of explicit conversion and can be used to perform four different types of conversions: static_cast, dynamic_cast, reinterpret_cast, and const_cast. Each of these types of casts performs a different type of conversion, depending on the requirements of the programmer.

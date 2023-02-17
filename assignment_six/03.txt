@@ -1,0 +1,55 @@
+Operator overloading is a feature in C++ that allows operators to be redefined or overloaded to work with user-defined data types. In other words, it allows operators to behave differently based on the type of operands involved in the operation.
+
+C++ allows the following types of operators to be overloaded:
+
+Unary operators - such as ++, --, +, -, !, ~
+Binary operators - such as +, -, *, /, %, ==, !=, <, >, <=, >=, &&, ||, =, +=, -=, *=, /=, %= etc.
+Subscript operator - []
+Function call operator - ()
+Arrow operator - ->
+Comma operator - ,
+Here are some examples of operator overloading in C++:
+
+Example 1: Overloading the '+' operator for a custom class
+
+class Point {
+  public:
+    int x, y;
+    
+    Point operator+(const Point& other) const {
+        Point result;
+        result.x = x + other.x;
+        result.y = y + other.y;
+        return result;
+    }
+};
+
+int main() {
+    Point p1 = {1, 2};
+    Point p2 = {3, 4};
+    Point p3 = p1 + p2; // This will call the overloaded '+' operator
+    // p3.x will be 4, and p3.y will be 6
+    return 0;
+}
+In this example, we have defined a custom Point class with two integer attributes x and y. We have overloaded the + operator using a member function operator+, which takes a const Point& argument and returns a Point. This function returns a new Point object with the x and y values of the two input Point objects added together. In the main function, we create two Point objects p1 and p2, and add them together using the overloaded + operator.
+
+Example 2: Overloading the '<<' operator for a custom class
+
+class Person {
+  public:
+    std::string name;
+    int age;
+    
+    friend std::ostream& operator<<(std::ostream& os, const Person& person) {
+        os << "Name: " << person.name << ", Age: " << person.age;
+        return os;
+    }
+};
+
+int main() {
+    Person person = {"John Doe", 30};
+    std::cout << person << std::endl; // This will call the overloaded '<<' operator
+    // Output: Name: John Doe, Age: 30
+    return 0;
+}
+In this example, we have defined a custom Person class with a name attribute and an age attribute. We have overloaded the << operator using a friend function, which takes an std::ostream& argument and a const Person& argument, and returns an std::ostream&. This function prints out the name and age of the Person object to the output stream os. In the main function, we create a Person object person and print it out using the overloaded << operator.

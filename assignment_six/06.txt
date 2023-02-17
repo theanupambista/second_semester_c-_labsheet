@@ -1,0 +1,5 @@
+A container class is a class in C++ that is designed to hold or store objects of other classes. A container class can be thought of as a data structure that provides methods to add, remove, and access objects stored within it. Examples of container classes in C++ include std::vector, std::list, and std::map.
+
+In contrast, inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a new class to be based on an existing class, inheriting its data and functions, and adding new functionality or modifying existing functionality. In C++, inheritance is achieved using the class keyword, followed by a colon and the name of the base class.
+
+The main difference between a container class and inheritance is that a container class is used to group and organize objects of other classes, while inheritance is used to create new classes that inherit data and functions from existing classes. Inheritance is used to build class hierarchies, while container classes are used to store and manage collections of objects.

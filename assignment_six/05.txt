@@ -1,0 +1,80 @@
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a new class to be based on an existing class, inheriting its data and functions, and adding new functionality or modifying existing functionality. In C++, inheritance is achieved using the class keyword, followed by a colon and the name of the base class.
+
+There are several types of inheritance in C++, including:
+
+1)Single Inheritance:
+Single inheritance is the simplest form of inheritance, in which a derived class is created from a single base class. In single inheritance, the derived class inherits all of the public and protected data and functions of the base class.
+Here is an example of single inheritance in C++:
+
+class Shape {
+  public:
+    void setWidth(int w) {
+      width = w;
+    }
+    void setHeight(int h) {
+      height = h;
+    }
+  protected:
+    int width;
+    int height;
+};
+
+class Rectangle: public Shape {
+  public:
+    int getArea() {
+      return (width * height);
+    }
+};
+
+int main() {
+  Rectangle rect;
+  rect.setWidth(5);
+  rect.setHeight(7);
+  cout << "Area of rectangle: " << rect.getArea() << endl;
+  return 0;
+}
+
+
+In this example, the Shape class is the base class, and the Rectangle class is the derived class. The Rectangle class inherits the setWidth and setHeight functions from the Shape class and adds a new function getArea that calculates the area of the rectangle.
+
+2)Multiple Inheritance:
+Multiple inheritance is a type of inheritance in which a derived class is created from two or more base classes. In multiple inheritance, the derived class inherits all of the public and protected data and functions of the base classes.
+Here is an example of multiple inheritance in C++:
+class Person {
+  public:
+    void setName(string n) {
+      name = n;
+    }
+  protected:
+    string name;
+};
+
+class Student {
+  public:
+    void setGrade(int g) {
+      grade = g;
+    }
+  protected:
+    int grade;
+};
+
+class GraduateStudent: public Person, public Student {
+  public:
+    void setThesis(string t) {
+      thesis = t;
+    }
+  protected:
+    string thesis;
+};
+
+int main() {
+  GraduateStudent grad;
+  grad.setName("John Doe");
+  grad.setGrade(90);
+  grad.setThesis("A Study of Particle Physics");
+  return 0;
+}
+In this example, the Person class and the Student class are the base classes, and the GraduateStudent class is the derived class. The GraduateStudent class inherits the setName function from the Person class, the setGrade function from the Student class, and adds a new function setThesis that sets the thesis topic of the graduate student.
+
+3)Hierarchical Inheritance:
+Hierarchical inheritance is a type of inheritance in which a derived class is created from a single base class, but several derived classes can be created from the same base class. In hierarchical inheritance, the derived classes inherit all of the public and protected data and functions of the base class.

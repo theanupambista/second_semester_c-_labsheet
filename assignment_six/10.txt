@@ -1,0 +1,3 @@
+Method overriding is a mechanism in Object-Oriented Programming (OOP) where a subclass provides its own implementation of a method that is already defined in its parent class. When a method in a subclass has the same name, return type, and parameters as a method in its parent class, it is said to override the parent method.
+
+In C++, method overriding is achieved using virtual functions. When a function is declared as virtual in the base class, the derived classes can override the function by defining their own implementation of the function with the same signature.
