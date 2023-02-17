@@ -1,0 +1,42 @@
+In C++, operator functions are special functions that are used to define the behavior of operators when applied to objects of a class. They are member functions of a class that have the same name as an operator and are invoked when the operator is used on objects of the class.
+
+The syntax for an operator function is as follows:
+
+return-type operator operator-symbol (parameters) {
+    // function body
+}
+Here, return-type is the data type returned by the operator function, operator-symbol is the symbol of the operator to be overloaded, and parameters are the arguments passed to the operator function.
+
+For example, suppose we have a Point class that represents a point in a two-dimensional space, with x and y as its coordinates. We can overload the + operator to allow two Point objects to be added together as follows:
+
+class Point {
+private:
+    int x, y;
+public:
+    Point(int x = 0, int y = 0) {
+        this->x = x;
+        this->y = y;
+    }
+    Point operator+(const Point& p) {
+        Point sum;
+        sum.x = this->x + p.x;
+        sum.y = this->y + p.y;
+        return sum;
+    }
+};
+
+int main() {
+    Point p1(1, 2);
+    Point p2(3, 4);
+    Point p3 = p1 + p2;
+    std::cout << "The sum of the points is (" << p3.x << ", " << p3.y << ")" << std::endl;
+    return 0;
+}
+In this example, we have defined an operator+ function for the Point class. The function takes a const reference to another Point object as a parameter, and returns a new Point object that represents the sum of the two points.
+
+In the main() function, we create two Point objects p1 and p2, and add them together using the + operator. The result is stored in a third Point object p3, which is then displayed to the user.
+
+This is just one example of how operator functions can be used to provide custom behavior for operators in C++. By overloading operators, we can make our classes more intuitive and easy to use, and provide powerful new functionality for our programs.
+
+
+

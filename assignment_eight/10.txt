@@ -1,0 +1,41 @@
+In C++, arrays of objects can be created using pointers. Here's an example of how to create an array of Student objects using a pointer:
+
+#include <iostream>
+#include <string>
+
+class Student {
+private:
+    std::string name;
+    int roll_no;
+public:
+    Student(std::string name, int roll_no) {
+        this->name = name;
+        this->roll_no = roll_no;
+    }
+    void display() {
+        std::cout << "Name: " << name << ", Roll No: " << roll_no << std::endl;
+    }
+};
+
+int main() {
+    int size = 3;
+    Student* students = new Student[size];
+
+    students[0] = Student("John", 101);
+    students[1] = Student("Jane", 102);
+    students[2] = Student("Bob", 103);
+
+    for (int i = 0; i < size; i++) {
+        students[i].display();
+    }
+
+    delete[] students;
+    return 0;
+}
+In this example, we define a Student class that has two private data members - name and roll_no. We define a constructor for the class that takes two arguments - the student's name and roll number - and initializes the object.
+
+In the main() function, we first create an integer size to specify the number of Student objects we want to create. We then create a pointer students of type Student using the new operator and the size variable. This allocates enough memory to store an array of size Student objects on the heap.
+
+We then use array subscript notation to assign Student objects to each element of the array. Finally, we use a for loop to call the display() method of each Student object in the array, which prints the student's name and roll number to the console.
+
+After we're finished using the array, we use the delete[] operator to deallocate the memory that was allocated for the array. This is an important step to prevent memory leaks in our program.

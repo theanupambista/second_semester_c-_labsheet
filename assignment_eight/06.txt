@@ -1,0 +1,35 @@
+In C++, dynamic initialization of objects is achieved using the constructor function. The constructor function is a special member function of a class that is called automatically when an object of that class is created.
+
+To perform dynamic initialization of an object, the constructor function can be used to set the initial values of the object's member variables. This allows the object to be initialized with values that are not known at compile time, but are instead determined at runtime.
+
+Here is an example of using the constructor function to perform dynamic initialization of an object:
+
+#include <iostream>
+
+class Rectangle {
+private:
+    int width, height;
+public:
+    Rectangle(int w, int h) {
+        width = w;
+        height = h;
+    }
+    int area() {
+        return width * height;
+    }
+};
+
+int main() {
+    int w, h;
+    std::cout << "Enter the width and height of the rectangle: ";
+    std::cin >> w >> h;
+
+    Rectangle rect(w, h);
+
+    std::cout << "The area of the rectangle is " << rect.area() << std::endl;
+
+    return 0;
+}
+In this example, the Rectangle class has a constructor function that takes two parameters, w and h, which represent the width and height of the rectangle. When an object of the Rectangle class is created, the constructor function is called with the values of w and h, which are determined at runtime.
+
+In the main() function, the user is prompted to enter the width and height of the rectangle, and these values are stored in the variables w and h. The Rectangle object rect is then created with these values using the constructor function. Finally, the area of the rectangle is computed using the area() member function of the Rectangle class, and displayed to the user.

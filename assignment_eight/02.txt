@@ -1,0 +1,39 @@
+A member function of a class in C++ is defined within the class definition, and is declared using the public, private, or protected access modifiers. The syntax for defining a member function is as follows:
+
+class MyClass {
+public:
+    void myFunction() {
+        // function body
+    }
+};
+In this example, myFunction is a member function of the MyClass class, and is defined using the public access modifier.
+
+Defining a friend function in C++:
+
+A friend function is a function that is not a member of a class, but has access to the private and protected members of the class. Friend functions are declared within the class definition, and are defined outside the class definition. The syntax for defining a friend function is as follows:
+
+class MyClass {
+    friend void myFriendFunction(MyClass& myObject);
+private:
+    int myPrivateVariable;
+public:
+    int myPublicVariable;
+};
+
+void myFriendFunction(MyClass& myObject) {
+    myObject.myPrivateVariable = 1; // can access private members of MyClass
+    myObject.myPublicVariable = 2; // can also access public members of MyClass
+}
+In this example, myFriendFunction is a friend function of the MyClass class, and is declared within the class definition using the friend keyword. The function takes a reference to an instance of the MyClass class as a parameter, and can access both the private and public members of the class.
+
+Merits and Demerits of using friend function:
+
+Merits:
+
+Friend functions provide a way to give external functions access to private and protected members of a class, which can be useful in certain situations.
+Friend functions can be used to improve code organization and reduce coupling between classes.
+Demerits:
+
+Friend functions break encapsulation by allowing external functions to access private and protected members of a class, which can make it harder to reason about the behavior of the class.
+Friend functions can make the code more difficult to maintain, since changes to the implementation of the class may require changes to the implementation of the friend function.
+Overuse of friend functions can lead to code that is difficult to understand and maintain.

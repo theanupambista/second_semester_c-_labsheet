@@ -1,0 +1,25 @@
+A constructor is a special member function of a class that is called when an instance of the class is created. The constructor initializes the state of the object and can perform any necessary setup or initialization.
+
+In C++, a constructor is defined using the same name as the class, and does not have a return type. The constructor can take parameters, which can be used to initialize the object's state. If no constructor is defined for a class, a default constructor is provided by the compiler.
+
+Special properties of constructor in C++:
+
+Same name as the class: Constructors have the same name as the class they belong to, and they do not have a return type.
+
+Automatically called: Constructors are automatically called when an object of the class is created.
+
+No return value: Constructors do not have a return type, including void.
+
+Overloading: Constructors can be overloaded, meaning that multiple constructors with different parameter lists can be defined for the same class.
+
+Initialization: Constructors are used to initialize the member variables of the class to their initial values.
+
+Inheritance: Constructors can be inherited from the base class, allowing derived classes to reuse the base class's initialization code.
+
+Default Constructor: If a constructor is not defined for a class, the compiler provides a default constructor that initializes all member variables to their default values.
+
+Copy Constructor: A copy constructor is a special constructor that creates a new object by copying the state of an existing object. The copy constructor is called when an object is passed by value or returned by value.
+
+Parameterized Constructor: A parameterized constructor is a constructor that takes one or more parameters, which can be used to initialize the object's state.
+
+Explicit Constructor: An explicit constructor is a constructor that is marked with the explicit keyword, and is used to prevent implicit conversions from the constructor's parameter type to the class type. This is useful for preventing unintended conversions and improving code clarity.

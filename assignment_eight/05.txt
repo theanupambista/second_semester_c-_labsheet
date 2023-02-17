@@ -1,0 +1,18 @@
+In C++, an inline function is a function that is expanded in place by the compiler at the point where it is called, rather than being called as a separate function. This can result in faster code execution, as the overhead of the function call is eliminated.
+
+To declare a function as inline, the keyword inline is placed in front of the function definition. Here is an example of an inline function that calculates the square of a number:
+
+#include <iostream>
+
+inline int square(int num) {
+    return num * num;
+}
+
+int main() {
+    int number = 5;
+    std::cout << "The square of " << number << " is " << square(number) << std::endl;
+    return 0;
+}
+In this example, the square() function is declared as inline, which tells the compiler to expand the function call inline. When the function is called with the parameter number, the compiler replaces the function call with the actual code of the square() function. This can result in faster code execution, as the overhead of the function call is eliminated.
+
+Note that the decision of whether to expand a function inline is made by the compiler, and the inline keyword is only a suggestion to the compiler. In some cases, the compiler may decide not to expand a function inline, even if it is declared as inline. It is also worth noting that inline functions can increase the size of the executable file, as the function code is duplicated each time the function is called. As such, it is generally recommended to use inline functions for small, frequently used functions, rather than large or infrequently used functions.

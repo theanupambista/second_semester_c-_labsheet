@@ -1,0 +1,30 @@
+The do-while structure in C++ is a looping construct that executes a block of code repeatedly while a condition is true. The difference between the do-while structure and the while structure is that the do-while structure always executes the block of code at least once, even if the condition is false.
+
+The syntax for the do-while structure is as follows:
+
+do {
+    // code to execute
+} while (condition);
+In this structure, the code block is executed first, and then the condition is checked. If the condition is true, the code block is executed again, and the process is repeated until the condition is false.
+
+Here is an example of using the do-while structure in C++ to read a sequence of numbers from the user and compute their sum:
+
+#include <iostream>
+
+int main() {
+    int number, sum = 0;
+    char choice;
+
+    do {
+        std::cout << "Enter a number: ";
+        std::cin >> number;
+        sum += number;
+
+        std::cout << "Do you want to continue (y/n)? ";
+        std::cin >> choice;
+    } while (choice == 'y' || choice == 'Y');
+
+    std::cout << "The sum is " << sum << std::endl;
+    return 0;
+}
+In this example, the do-while structure is used to repeatedly ask the user for a number and add it to a running total. After each number is entered, the user is asked if they want to continue entering numbers. If they answer "y" or "Y", the loop continues; otherwise, the loop exits and the sum is displayed. Notice that the loop executes at least once, even if the user decides not to continue after the first number is entered.

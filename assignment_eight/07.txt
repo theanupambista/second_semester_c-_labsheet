@@ -1,0 +1,15 @@
+In C++, destructors are special member functions of a class that are called automatically when an object of that class is destroyed. The destructor function is responsible for freeing any resources that were allocated by the object during its lifetime, such as memory or file handles.
+
+Here are some of the importances of destructors in C++:
+
+Memory Management: Destructors play an important role in managing the memory allocated to objects of a class. They are used to release the memory allocated by the object when it is no longer needed. This can help prevent memory leaks and improve the overall performance of the program.
+
+Resource Management: In addition to memory, objects may also hold other resources such as file handles or network connections. Destructors are used to release these resources, ensuring that they are properly cleaned up when the object is destroyed.
+
+Automatic Cleanup: Destructors provide a way to perform automatic cleanup of objects when they go out of scope or are no longer needed. This can simplify code by removing the need for explicit cleanup code.
+
+Inheritance: In C++, destructors can be inherited from a base class, allowing derived classes to have their own destructors that automatically call the destructor of the base class. This can simplify the management of complex class hierarchies.
+
+Garbage Collection: In languages that use garbage collection, destructors are used to release resources that are not managed by the garbage collector, such as file handles or network connections. This ensures that resources are released in a timely manner, improving the performance and reliability of the program.
+
+Overall, destructors are an important part of C++ programming, and play a critical role in managing resources and ensuring the proper cleanup of objects
