@@ -1,0 +1,69 @@
+In C++, access specifiers (private, public, and protected) are used to control the visibility and accessibility of class members (variables and functions).
+
+Here's an example to illustrate the differences between private, public, and protected variables:
+
+#include <iostream>
+using namespace std;
+
+class Shape {
+   public:
+      // public members are accessible from anywhere
+      void setWidth(int w) {
+         width = w;
+      }
+      
+      int getWidth() {
+         return width;
+      }
+      
+   private:
+      // private members are only accessible from within the class
+      int height;
+      
+   protected:
+      // protected members are accessible from within the class and its derived classes
+      int width;
+};
+
+class Rectangle: public Shape {
+   public:
+      int getArea() {
+         // derived class can access protected members of base class
+         return (width * height);
+      }
+      
+      void setHeight(int h) {
+         // derived class can access protected members of base class
+         height = h;
+      }
+};
+
+int main() {
+   Rectangle rect;
+   
+   // public members can be accessed from outside the class
+   rect.setWidth(5);
+   cout << "Width: " << rect.getWidth() << endl;
+
+   // private members cannot be accessed from outside the class
+   //rect.height = 7;  // Error: 'int Shape::height' is private within this context
+   
+   // protected members cannot be accessed from outside the class or its derived classes
+   //rect.width = 7;   // Error: 'int Shape::width' is protected within this context
+   
+   rect.setHeight(7);
+   cout << "Area: " << rect.getArea() << endl;
+
+   return 0;
+}
+In this example, we have a base class Shape with three member variables: width (protected), height (private), and two member functions: setWidth and getWidth (public). The setWidth function sets the value of the width variable, while the getWidth function returns the value of the width variable.
+
+We then define a derived class Rectangle that inherits from the Shape class using the public access specifier. The Rectangle class defines a new member function getArea that calculates the area of the rectangle using the width and height variables (inherited from the Shape class) and a new member function setHeight that sets the value of the height variable.
+
+In the main function, we create an object rect of the Rectangle class, and set its width using the setWidth function inherited from the Shape class. We then get the value of width using the getWidth function.
+
+We cannot directly access the height member variable outside of the Shape class since it is marked private. Similarly, we cannot directly access the width member variable outside of the Shape class or its derived classes since it is marked protected.
+
+However, we can access the height and width member variables within the Rectangle class since it is a derived class of Shape and can access the protected and private members of the base class.
+
+Therefore, in this example, public members are accessible from anywhere, private members are only accessible from within the class, and protected members are accessible from within the class and its derived classes.

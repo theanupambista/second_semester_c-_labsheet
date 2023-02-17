@@ -1,0 +1,52 @@
+In C++, a base class is a class from which other classes, called derived classes, can be created. The derived classes inherit the members (variables and functions) of the base class, and can also add their own unique members.
+
+Here's an example to illustrate the concept of base class and derived class:
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Shape {
+   public:
+      void setWidth(int w) {
+         width = w;
+      }
+
+      void setHeight(int h) {
+         height = h;
+      }
+
+   protected:
+      int width;
+      int height;
+};
+
+// Derived class
+class Rectangle: public Shape {
+   public:
+      int getArea() {
+         return (width * height);
+      }
+};
+
+int main() {
+   Rectangle rect;
+
+   rect.setWidth(5);
+   rect.setHeight(7);
+
+   // The following two lines are equivalent
+   cout << "Area of the rectangle is: " << rect.getArea() << endl;
+   cout << "Area of the rectangle is: " << rect.width * rect.height << endl;
+
+   return 0;
+}
+In this example, we have a base class Shape with two member variables width and height, and two member functions setWidth and setHeight to set the values of these variables. The Shape class is not meant to be instantiated directly, but rather to be inherited by other classes.
+
+We then define a derived class Rectangle that inherits from the Shape class using the public access specifier. This means that the public and protected members of the Shape class are accessible in the Rectangle class.
+
+The Rectangle class defines a new member function getArea that calculates the area of the rectangle using the width and height variables inherited from the Shape class.
+
+In the main function, we create an object rect of the Rectangle class, and set its width and height using the setWidth and setHeight functions inherited from the Shape class. We then calculate the area of the rectangle using the getArea function, which uses the width and height variables inherited from the Shape class.
+
+Thus, in this example, Shape is the base class, and Rectangle is the derived class. The Rectangle class inherits the member variables and functions of the Shape class, and adds its own member function to calculate the area of the rectangle.

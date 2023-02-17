@@ -1,0 +1,48 @@
+Constructors and destructors are special member functions in Object-Oriented Programming (OOP) that are used to initialize and destroy objects of a class, respectively.
+
+A constructor is a member function that is called automatically when an object of a class is created. It is used to initialize the object's data members with suitable values. A destructor, on the other hand, is a member function that is called automatically when an object of a class is destroyed. It is used to clean up any resources used by the object.
+
+In C++, constructors and destructors have the same name as the class and are declared with no return type. Constructors can be overloaded to take different arguments, allowing for different ways to create objects of a class.
+
+Here's an example of a user-defined parameterized constructor in C++:
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle {
+public:
+    // Declare a parameterized constructor that takes length and width as arguments
+    Rectangle(double l, double w) {
+        length = l;
+        width = w;
+    }
+
+    // Declare a function to compute the area of the rectangle
+    double area() {
+        return length * width;
+    }
+
+private:
+    double length, width;
+};
+
+int main() {
+    // Declare a Rectangle object using the parameterized constructor
+    Rectangle rect(5.0, 10.0);
+
+    // Call the area() method to compute the area of the rectangle
+    double rectArea = rect.area();
+
+    // Print the area of the rectangle to the console
+    cout << "The area of the rectangle is " << rectArea << endl;
+
+    return 0;
+}
+In this program, we define a Rectangle class with a parameterized constructor that takes the length and width of the rectangle as arguments. The constructor initializes the length and width data members with the values passed as arguments.
+
+We also define a function area() that computes the area of the rectangle by multiplying its length and width.
+
+In the main() function, we create a Rectangle object using the parameterized constructor by passing the length and width of the rectangle as arguments. We then call the area() method on the object to compute its area, which is stored in the rectArea variable. Finally, we print the area of the rectangle to the console using cout.
+
+This demonstrates how a user-defined parameterized constructor can be used to initialize the data members of an object when it is created.

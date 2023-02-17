@@ -1,0 +1,51 @@
+Polymorphism is an important concept in object-oriented programming, including C++. It refers to the ability of objects of different classes to be used interchangeably, as if they were objects of the same class.
+
+There are two main types of polymorphism in C++: compile-time polymorphism (also called static polymorphism) and run-time polymorphism (also called dynamic polymorphism).
+
+Compile-time polymorphism is achieved through function overloading and operator overloading. Function overloading allows multiple functions with the same name to coexist in a class, with different parameters or return types. Operator overloading allows operators such as + and * to be redefined to work with objects of a class.
+
+Run-time polymorphism is achieved through virtual functions and inheritance. In C++, virtual functions are functions that are marked with the keyword "virtual" in the base class, and can be overridden in derived classes. When a virtual function is called on a base class object, the actual function that gets called depends on the type of object being pointed to or referred to. This allows for different behaviors to be implemented in derived classes, even when called through a pointer or reference to the base class.
+
+Polymorphism plays an important role in OOP because it allows for code reuse and flexibility in program design. With polymorphism, a base class can define a set of methods that can be implemented in different ways by derived classes, allowing for more modular and extensible code. It also allows for more abstraction and encapsulation, since the details of the implementation can be hidden behind the base class interface, while still allowing for different behavior in derived classes.
+
+Here's an example to illustrate how polymorphism works in C++:
+
+#include <iostream>
+using namespace std;
+
+class Shape {
+   public:
+      virtual void draw() {
+         cout << "Drawing a generic shape." << endl;
+      }
+};
+
+class Circle: public Shape {
+   public:
+      void draw() {
+         cout << "Drawing a circle." << endl;
+      }
+};
+
+class Rectangle: public Shape {
+   public:
+      void draw() {
+         cout << "Drawing a rectangle." << endl;
+      }
+};
+
+int main() {
+   Shape *shape;
+
+   Circle circle;
+   Rectangle rectangle;
+
+   shape = &circle;
+   shape->draw(); // prints "Drawing a circle."
+
+   shape = &rectangle;
+   shape->draw(); // prints "Drawing a rectangle."
+
+   return 0;
+}
+In this example, we have a base class Shape with a virtual function draw, and two derived classes Circle and Rectangle that override the draw function with their own implementation. In the main function, we create objects of both Circle and Rectangle classes, and then use a pointer to the Shape base class to call the draw function on both objects. Since the draw function is marked as virtual in the base class, the actual function that gets called depends on the type of object being pointed to or referred to. This allows for polymorphism, as we can use the same draw function on different types of objects, and get different behavior depending on the type of object. In this way, polymorphism allows for more flexible and extensible code, as different behaviors can be implemented in derived classes while still using the same interface in the base class.

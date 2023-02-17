@@ -1,0 +1,39 @@
+Function overloading is a feature in C++ that allows multiple functions with the same name to exist in a program as long as they have different parameter lists (i.e., different number or types of parameters).
+
+For example, let's say we want to create a function that can add two integers or two floating-point numbers, or even three numbers of any data type. We can achieve this using function overloading by creating multiple functions with the same name "add" but with different parameter lists:
+
+#include <iostream>
+using namespace std;
+
+// Function to add two integers
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function to add two floating-point numbers
+float add(float a, float b) {
+    return a + b;
+}
+
+// Function to add three numbers of any data type
+template <typename T>
+T add(T a, T b, T c) {
+    return a + b + c;
+}
+
+int main() {
+    int x = 5, y = 10;
+    float a = 2.5, b = 4.3;
+    int sum1 = add(x, y);
+    float sum2 = add(a, b);
+    int sum3 = add(2, 4, 6);
+    float sum4 = add(2.5, 3.7, 1.2);
+    cout << "Sum of " << x << " and " << y << " is " << sum1 << endl;
+    cout << "Sum of " << a << " and " << b << " is " << sum2 << endl;
+    cout << "Sum of 2, 4, and 6 is " << sum3 << endl;
+    cout << "Sum of 2.5, 3.7, and 1.2 is " << sum4 << endl;
+    return 0;
+}
+In this example, we have defined three functions with the same name "add". The first function takes two integer arguments and returns the sum of those integers. The second function takes two float arguments and returns the sum of those floats. The third function is a template function that takes three arguments of any data type and returns their sum.
+
+In the main function, we can call the appropriate add function based on the arguments we provide. This allows us to reuse the same function name for different operations, which makes the code more concise and easier to read.
