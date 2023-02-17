@@ -1,0 +1,46 @@
+In C++, a constructor is a special member function that is called automatically when an object is created. The purpose of the constructor is to initialize the data members of the object to valid values so that the object can be used properly.
+
+There are two types of constructors in C++: default constructors and parameterized constructors.
+
+Default Constructor: A default constructor is a constructor that takes no arguments. It is used to create objects that don't require any initialization. If a class does not have any constructors defined explicitly, the compiler generates a default constructor by default. The default constructor initializes the data members of the object to their default values.
+
+Parameterized Constructor: A parameterized constructor is a constructor that takes one or more arguments. It is used to create objects that require initialization with specific values. The user defines the parameterized constructor explicitly in the class definition.
+
+Here is an example of a user-defined parameterized constructor:
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+    private:
+        double length;
+        double width;
+
+    public:
+        Rectangle(double len, double wid) {
+            length = len;
+            width = wid;
+        }
+
+        double area() {
+            return length * width;
+        }
+};
+
+int main() {
+    double length, width;
+
+    cout << "Enter the length of the rectangle: ";
+    cin >> length;
+
+    cout << "Enter the width of the rectangle: ";
+    cin >> width;
+
+    Rectangle rect(length, width);
+
+    cout << "The area of the rectangle is: " << rect.area() << endl;
+
+    return 0;
+}
+In this program, we define a Rectangle class that has two private data members: length and width. We then define a parameterized constructor that takes two arguments, len and wid, and initializes the length and width data members of the object with these values.
+
+In the main() function, we ask the user to input the length and width of the rectangle. We then create a Rectangle object rect using the parameterized constructor, passing the length and width values as arguments. Finally, we output the area of the rectangle by calling the area() method of the rect object.
