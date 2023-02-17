@@ -1,0 +1,30 @@
+In C++, type casting refers to the conversion of one data type to another. There are two types of type casting: implicit and explicit.
+
+Implicit type casting is also called type coercion and happens automatically when the compiler converts one data type to another in a statement. For example, if you assign an integer value to a floating-point variable, the compiler will automatically convert the integer to a float.
+
+Explicit type casting, on the other hand, requires the programmer to explicitly convert one data type to another. In C++, this is done by using a cast operator. There are several types of cast operators, including static_cast, dynamic_cast, const_cast, and reinterpret_cast.
+
+Here are some examples of type casting in C++:
+
+// Implicit type casting (type coercion)
+int x = 10;
+double y = x; // Implicit conversion of int to double
+
+// Explicit type casting
+double a = 3.14159;
+int b = static_cast<int>(a); // Explicit conversion of double to int using static_cast
+
+char c = 'A';
+int d = static_cast<int>(c); // Explicit conversion of char to int using static_cast
+
+int* ptr = nullptr;
+char* cptr = reinterpret_cast<char*>(ptr); // Explicit conversion of int pointer to char pointer using reinterpret_cast
+
+
+In the first example, an integer value x is assigned to a double variable y, causing an implicit conversion of the int to a double.
+
+In the second example, a double value a is explicitly converted to an int using static_cast. The static_cast operator performs compile-time checks to ensure that the conversion is safe.
+
+In the third example, a character value c is explicitly converted to an int using static_cast.
+
+In the fourth example, a null pointer of type int is explicitly converted to a pointer of type char using reinterpret_cast. This type of cast should be used with caution, as it can result in undefined behavior if the underlying types are not compatible.

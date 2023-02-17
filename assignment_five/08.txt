@@ -1,0 +1,56 @@
+Function overloading and function overriding are two important concepts in object-oriented programming, and they are both used to give different functionality to methods with the same name. In C++, function overloading and function overriding have different meanings and behaviors.
+
+Function Overloading:
+Function overloading is the process of creating multiple functions in the same class or namespace with the same name but different parameters. These functions can have the same name, but they must have different parameter lists. C++ distinguishes between overloaded functions based on the number, type, and order of the arguments passed to them. Here's an example:
+#include <iostream>
+using namespace std;
+
+int add(int x, int y) {
+  return x + y;
+}
+
+double add(double x, double y) {
+  return x + y;
+}
+
+int main() {
+  cout << add(5, 10) << endl;      // calls the first add function
+  cout << add(1.2, 2.3) << endl;   // calls the second add function
+  return 0;
+}
+In this example, we have defined two functions with the same name add. The first function takes two integer arguments, and the second function takes two double arguments. When the add function is called with integer arguments, the first function is executed, and when it is called with double arguments, the second function is executed.
+
+Function Overriding:
+Function overriding is the process of providing a new implementation of an existing method in a subclass. The method being overridden must have the same signature (return type, name, and parameter list) as the method in the parent class. When the method is called on an object of the subclass, the overridden version of the method is executed instead of the parent version. Here's an example:
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void makeSound() {
+        cout << "Animal is making a sound." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        cout << "Dog is barking." << endl;
+    }
+};
+
+int main() {
+    Animal *animal = new Animal();
+    animal->makeSound();    // output: Animal is making a sound.
+
+    Dog *dog = new Dog();
+    dog->makeSound();       // output: Dog is barking.
+
+    Animal *dogAsAnimal = new Dog();
+    dogAsAnimal->makeSound();// output: Dog is barking.
+
+    return 0;
+}
+In this example, we have defined two classes: Animal and Dog. The Dog class is a subclass of Animal. The Animal class has a virtual method called makeSound(). The Dog class overrides the makeSound() method with its own implementation.
+
+In the main function, we create instances of both the Animal class and the Dog class. We call the makeSound() method on each object. When we call the makeSound() method on the Animal object, the implementation of the Animal class is executed. When we call the makeSound() method on the Dog object, the implementation of the Dog class is executed. Finally, we create an Animal pointer that points to a Dog object. When we call the makeSound() method on this object, the overridden makeSound() method of the Dog class is executed.

@@ -1,0 +1,30 @@
+In C++, a class can be derived from another class, creating a hierarchy of classes. The class that is being derived from is called the super or base class, and the class that is being derived is called the sub class.
+
+A sub class inherits all the members of its super class, such as data members and member functions, and can also add its own unique members. The sub class can also override or extend the functionality of its super class by redefining its virtual functions.
+
+Here's an example of a base class and a sub class in C++:
+
+// Base class
+class Vehicle {
+  public:
+    string brand = "Unknown";
+    void honk() {
+      cout << "Honk honk!" << endl;
+    }
+};
+
+// Sub class
+class Car : public Vehicle {
+  public:
+    string model = "Unknown";
+};
+
+int main() {
+  Car myCar;
+  myCar.brand = "Ford";
+  myCar.model = "Mustang";
+  cout << "My " << myCar.brand << " " << myCar.model << endl;
+  myCar.honk();
+  return 0;
+}
+In this example, Vehicle is the base class and Car is the sub class. The Car class inherits the brand member variable and honk() member function from the Vehicle class, and adds its own model member variable. The main() function creates an instance of Car and sets its brand and model values. It then calls the honk() function from the base class, which is also inherited by the Car class.
